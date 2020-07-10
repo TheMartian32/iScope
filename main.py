@@ -1,5 +1,3 @@
-
-
 def ask_for(prompt, error_msg=None, _type=None):
     """ While the desired prompt is not given, it repeats the prompt. """
     while True:
@@ -18,8 +16,17 @@ def ask_for(prompt, error_msg=None, _type=None):
                 continue
         return inp
 
-
 def main():
+    """
+    Using an angle gauge and a tape measure
+    you can locate things in the sky by using this program
+    and an app that tracks azimuth. Credit most of the code
+    contained in this function goes to reddit user u/electropop999.
+
+    Returns:
+        [Float/Int]: When it returns the to_rope_point it can be a floating
+        point number or a integer.
+    """
 
     # * User inputs
     print('\n*---------------------------------------*')
@@ -50,7 +57,6 @@ def main():
         to_rope_point += circumference
 
     return print(f'\nPut marker here: {to_rope_point}')
-
 
 if __name__ == "__main__":
     main()
