@@ -1,3 +1,15 @@
+"""
+A script to help find objects in the sky
+based on their azimuth.
+
+Returns:
+    Float/int: When returning the either integer
+    or floating point value to point the telescope towards,
+    it is an int or float.
+"""
+
+
+#===============================================================================================#
 def ask_for(prompt, error_msg=None, _type=None):
     """ While the desired prompt is not given, it repeats the prompt. """
     while True:
@@ -15,8 +27,7 @@ def ask_for(prompt, error_msg=None, _type=None):
                     print(error_msg)
                 continue
         return inp
-
-
+#===============================================================================================#
 def main():
     """
     Using an angle gauge and a tape measure
@@ -59,8 +70,7 @@ def main():
         to_rope_point += circumference
 
     return print(f'\nPut marker here: {to_rope_point}')
-
-
+#===============================================================================================#
 if __name__ == "__main__":
     main()
 
@@ -81,3 +91,4 @@ if __name__ == "__main__":
 
         if repeat[0] == 'n':
             break
+#===============================================================================================#
