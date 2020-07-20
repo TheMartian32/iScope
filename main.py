@@ -7,9 +7,11 @@ Returns:
     or floating point value to point the telescope towards,
     it is an int or float.
 """
-
+import sys
 
 #===============================================================================================#
+
+
 def ask_for(prompt, error_msg=None, _type=None):
     """ While the desired prompt is not given, it repeats the prompt. """
     while True:
@@ -28,6 +30,8 @@ def ask_for(prompt, error_msg=None, _type=None):
                 continue
         return inp
 #===============================================================================================#
+
+
 def main():
     """
     Using an angle gauge and a tape measure
@@ -39,6 +43,9 @@ def main():
         [Float/Int]: When it returns the to_rope_point it can be a floating
         point number or a integer.
     """
+    print('\n***********************************')
+    print('Made for an 8" dobsonian telescope.')
+    print('***********************************')
 
     # * User inputs
     print('\n*---------------------------------------*')
@@ -69,7 +76,13 @@ def main():
     if to_rope_point < 0:
         to_rope_point += circumference
 
-    return print(f'\nPut marker here: {to_rope_point}')
+    if to_rope_point > 155:
+        print('\nCant push marker to that point. ( Value exceeds 5.086 ft. )')
+        sys.exit()
+
+    return print(f'\nPush marker to this point on the tape measure: {to_rope_point}')
+
+
 #===============================================================================================#
 if __name__ == "__main__":
     main()
@@ -83,7 +96,7 @@ if __name__ == "__main__":
             '\nTyping Y will restart the script, typing N will terminate it.')
 
         repeat = input(
-            '\nDo you need any more information? (Y/N): ').lower()
+            '\n: ').lower()
 
         if repeat[0] == 'y':
             main()
