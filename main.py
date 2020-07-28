@@ -80,7 +80,10 @@ def main():
         print('\nCant push marker to that point. ( Value exceeds 5.086 ft. )')
         sys.exit()
 
-    return print(f'\nPush marker to this point on the tape measure: {to_rope_point}')
+    #* Rounding answer so that its easier to read and to push to on the tape measure.
+    push_to = round(to_rope_point, 2)
+
+    return print(f'\nPush marker to this point on the tape measure: {push_to}')
 
 
 #===============================================================================================#
